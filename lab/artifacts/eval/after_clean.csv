@@ -1,0 +1,4 @@
+question_id,question,top1_doc_id,top1_preview,contains_expected,hits_forbidden,top1_doc_expected,top_k_used
+gq_d10_01,Khách hàng có bao nhiêu ngày làm việc để yêu cầu hoàn tiền kể từ khi xác nhận đơn hàng?,policy_refund_v4,Yêu cầu được gửi trong vòng 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng.,yes,no,yes,3
+gq_d10_02,SLA phản hồi đầu tiên cho ticket P1 là bao lâu?,sla_p1_2026,Ticket P1 có SLA phản hồi ban đầu 15 phút và resolution trong 4 giờ.,yes,no,yes,3
+gq_d10_03,Nhân viên có dưới 3 năm kinh nghiệm được bao nhiêu ngày phép năm theo chính sách 2026?,hr_leave_policy,Nhân viên dưới 3 năm kinh nghiệm được 12 ngày phép năm theo chính sách 2026.,yes,no,yes,3
