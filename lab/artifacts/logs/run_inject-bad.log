@@ -1,0 +1,40 @@
+run_id=inject-bad
+raw_records=13
+cleaned_records=6
+quarantine_records=7
+cleaned_csv=artifacts\cleaned\cleaned_inject-bad.csv
+quarantine_csv=artifacts\quarantine\quarantine_inject-bad.csv
+expectation[min_one_row] OK (halt) :: cleaned_rows=6
+expectation[no_empty_doc_id] OK (halt) :: empty_doc_id_count=0
+expectation[refund_no_stale_14d_window] FAIL (halt) :: violations=1
+expectation[chunk_min_length_8] OK (warn) :: short_chunks=0
+expectation[effective_date_iso_yyyy_mm_dd] OK (halt) :: non_iso_rows=0
+expectation[hr_leave_no_stale_10d_annual] OK (halt) :: violations=0
+expectation[no_future_effective_date] OK (halt) :: future_dated_rows=0 today=2026-04-15
+expectation[chunk_count_per_doc_reasonable] OK (warn) :: doc_counts={'policy_refund_v4': 2, 'sla_p1_2026': 1, 'it_helpdesk_faq': 2, 'hr_leave_policy': 1}
+WARN: expectation failed but --skip-validate → tiếp tục embed (chỉ dùng cho demo Sprint 3).
+embed_prune_removed=1
+embed_upsert count=6 collection=day10_kb
+manifest_written=artifacts\manifests\manifest_inject-bad.json
+freshness_check=FAIL {"latest_exported_at": "2026-04-10T08:00:00", "age_hours": 115.558, "sla_hours": 24.0, "reason": "freshness_sla_exceeded"}
+PIPELINE_OK
+run_id=inject-bad
+raw_records=13
+cleaned_records=6
+quarantine_records=7
+cleaned_csv=artifacts\cleaned\cleaned_inject-bad.csv
+quarantine_csv=artifacts\quarantine\quarantine_inject-bad.csv
+expectation[min_one_row] OK (halt) :: cleaned_rows=6
+expectation[no_empty_doc_id] OK (halt) :: empty_doc_id_count=0
+expectation[refund_no_stale_14d_window] FAIL (halt) :: violations=1
+expectation[chunk_min_length_8] OK (warn) :: short_chunks=0
+expectation[effective_date_iso_yyyy_mm_dd] OK (halt) :: non_iso_rows=0
+expectation[hr_leave_no_stale_10d_annual] OK (halt) :: violations=0
+expectation[no_future_effective_date] OK (halt) :: future_dated_rows=0 today=2026-04-15
+expectation[chunk_count_per_doc_reasonable] OK (warn) :: doc_counts={'policy_refund_v4': 2, 'sla_p1_2026': 1, 'it_helpdesk_faq': 2, 'hr_leave_policy': 1}
+WARN: expectation failed but --skip-validate → tiếp tục embed (chỉ dùng cho demo Sprint 3).
+embed_prune_removed=1
+embed_upsert count=6 collection=day10_kb
+manifest_written=artifacts\manifests\manifest_inject-bad.json
+freshness_check=FAIL {"latest_exported_at": "2026-04-10T08:00:00", "age_hours": 121.458, "sla_hours": 24.0, "reason": "freshness_sla_exceeded"}
+PIPELINE_OK
